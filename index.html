@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./themes/grey.css"> <!-- theme -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.4/beautify-html.js"></script>
+    <script src="https://unpkg.com/code-prettify@0.1.0/src/run_prettify.js"></script>
+    <!-- <script src="https://unpkg.com/@custom-element/core/dist/ce-core.min.js"></script> -->
+    <script defer src="https://unpkg.com/@custom-element/core/dist/ce-core.js"></script>
+    <style>
+      body {
+        font-family: var(--theme-main-font, 'Roboto');
+        margin: 0;
+        color: var(--theme-text-color-800, #424242);
+      }
+
+      *, *:before, *:after {
+        box-sizing: border-box;
+      }
+
+      pre {
+        max-width: 100%;
+        overflow: auto;
+      }
+      div pre.prettyprint {
+        padding: 12px;
+        border: 1px solid var(--theme-color-300);
+      }
+
+      .float-left { float: left; }
+      .float-right { float: right; }
+      .display-none { display: none; }
+      .display-none:target { display: block; }
+      .clear-both:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+      }
+
+      .container {
+        padding: 12px;
+      }
+
+      .dark-bg {
+        background-color: var(--theme-color-600, #757575);
+        color: var(--theme-text-color-0, #ffffff);
+      }
+
+      main > div {
+        max-width: 1024px;
+        margin: 0 auto;
+      } 
+      a-nav-drawer .filler {
+        margin: 0; 
+        height:56px;
+        line-height: 56px;
+        padding: 0 18px;
+      }
+
+      a-nav-drawer .nav-items {
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+      }
+      a-nav-drawer .title { cursor: pointer; }
+      a-nav-drawer .title an-icon { display: none; }
+      a-nav-drawer .title:not(.expanded) .folded { display: inline-block; }
+      a-nav-drawer .title.expanded .expanded { display: inline-block; }
+      a-nav-drawer .title.expanded + .nav-items {
+        max-height: 999px;
+      }
+      @media only screen and (min-width : 1024px) {
+        main {
+          margin-left: 320px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <an-app-bar app-title="app-bar" class="fixed">
+      <div class="nav-icon">
+        <an-icon onclick="showDrawer()">menu</an-icon>
+      </div>
+      <span class="title">Custom Elements With Material Design</span>
+      <div class="icons">
+        <an-icon img="github.svg" href="https://github.com/allenhwkim/custom-element"></an-icon>
+      </div>
+    </an-app-bar>
+
+    <main>
+      <a-nav-drawer id="nav-drawer">
+        <h2 class="dark-bg filler">Custom Element</h2>
+        <div class="title expanded" onclick="toggle(this)"> 
+          <b>Getting Started</b>
+          <an-icon class="expanded float-right">keyboard_arrow_down</an-icon>
+          <an-icon class="folded float-right">keyboard_arrow_up</an-icon>
+        </div>
+        <div id="getting-started" class="nav-items">
+          <a-nav-item href="#installation" icon="content_paste">Installation</a-nav-item>
+          <a-nav-item href="#usage" icon="content_paste">Usage</a-nav-item>
+        </div>
+        <hr/>
+
+        <div class="title expanded" onclick="toggle(this)"> 
+          <an-icon class="expanded float-right">keyboard_arrow_down</an-icon>
+          <an-icon class="folded float-right">keyboard_arrow_up</an-icon>
+          <b>Components</b>
+        </div>
+        <div id="components" class="nav-items">
+          <a-nav-item href="#app-bar" icon="code">App Bar</a-nav-item>
+        </div>
+
+        <hr/>
+        <div class="title" onclick="toggle(this)">
+          <an-icon class="expanded float-right">keyboard_arrow_down</an-icon>
+          <an-icon class="folded float-right">keyboard_arrow_up</an-icon>
+          <b>Themes</b>
+        </div>
+        <div id="themes" class="nav-items">
+          <a-nav-item href="#app-bar" icon="palette">Red</a-nav-item>
+        </div>
+      </a-nav-drawer>
+
+      <a id="installation"></a>
+      <h2 id="installation">Installation</h2>
+      <div id="installation-div">
+        <p>
+          Custom Element has many useful ready-to-go packages available on <a href="https://www.npmjs.com/search?q=@custom-element">npm</a>. You can use it individually, or collectively using <a href="https://www.npmjs.com/package/@custom-element/core">`core` elements</a>
+        </p>
+        <p>
+          All are available through https://unpkg.com/@custom-element. For example.
+          <ul>
+            <li>Text field, https://unpkg.com/@custom-elements/text-field
+            <li>Core, https://unpkg.com/@custom-elements/core
+            <li>and 20+ more custom element packages
+          </ul>
+
+          By simplyin adding the following to you html, you are ready to use custom elements.
+          <pre class="prettyprint">
+&lt;script defer src="https://unpkg.com/@custom-element/core/dist/ce-core.min.js">&lt;/script></pre>
+        </p>
+
+        <p>
+          It's not mandatory, but for better use of custom element, it's recommended to use <a href="https://fonts.google.com/specimen/Roboto">Google Roboto font</a> and <a href="https://material.io/icons/">Material Design Icons</a> by adding the following to  &lt;head>
+          <pre class="prettyprint">
+&lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900">
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></pre>
+        </p>
+      </div>
+
+      <a id="usage"></a>
+      <h2 id="usage">Usage</h2>
+      <div id="usage-div">
+        Just use it in your html. No other step is required.
+        <pre class="code prettyprint">&lt;a-text-field label="Simple">&lt;/a-text-field></pre>
+      </div>
+
+    </main>
+    <script>
+      function showDrawer() {
+        document.querySelector('a-nav-drawer').open();
+      }
+      function toggle(div) {
+        div.classList.toggle('expanded');
+      }
+      // to prevent FOUC
+      var elm=document.querySelector('html');
+      elm.style.display="none";
+      document.addEventListener("DOMContentLoaded",_ => elm.style.display="block");
+    </script>
+  </body>
+</html>
