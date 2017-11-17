@@ -1,0 +1,50 @@
+<div id="installation-div">
+  <a id="installation"></a>
+  <h2>Installation</h2>
+  <p>
+    Custom Element has many useful ready-to-go packages available on <a href="https://www.npmjs.com/search?q=@custom-element">npm</a>. You can use it individually, or collectively using <a href="https://www.npmjs.com/package/@custom-element/core">`core` elements</a>
+  </p>
+  <p>
+    All are available through https://unpkg.com/@custom-element. For example.
+    <ul>
+      <li>Text field, https://unpkg.com/@custom-elements/text-field
+      <li>Core, https://unpkg.com/@custom-elements/core
+      <li>and 20+ more custom element packages
+    </ul>
+
+    By simplyin adding the following to you html, you are ready to use custom elements.
+    <pre class="prettyprint">
+&lt;script defer src="https://unpkg.com/@custom-element/core/dist/ce-core.min.js">&lt;/script></pre>
+  </p>
+
+  <p>
+    It's not mandatory, but for better use of custom element, it's recommended to use <a href="https://fonts.google.com/specimen/Roboto">Google Roboto font</a> and <a href="https://material.io/icons/">Material Design Icons</a> by adding the following to  &lt;head>
+    <pre class="prettyprint">
+&lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900">
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></pre>
+  </p>
+</div>
+
+<div id="usage-div">
+  <a id="usage"></a>
+  <h2>Usage</h2>
+  Just use it in your html. No other step is required.
+  <pre class="code prettyprint">&lt;a-text-field label="Simple">&lt;/a-text-field></pre>
+</div>
+
+<div id="faq-div">
+  <a id="faq"></a>
+  <h2>FAQ</h2>
+  <ol>
+    <li>
+      <h3>What's the way to prevent FOUC, Flash Of Unstyled Contents?</h3>
+      <p>
+        There are several ways to do it. One way is not to disply HTML until page is loaded
+        <pre class="prettyprint">
+var elm=document.querySelector('html');
+elm.style.display="none";
+document.addEventListener("DOMContentLoaded", _ => elm.style.display="block");</pre>
+      </p>
+    </li>
+  </ol>
+    </div>
