@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./themes/grey.css"> <!-- theme -->
+    <link rel="stylesheet" href="style.css"> <!-- theme -->
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://unpkg.com/whatwg-fetch@2.0.3/fetch.js"></script>
@@ -12,83 +13,6 @@
     <script src="https://unpkg.com/code-prettify@0.1.0/src/run_prettify.js"></script>
     <!-- <script src="https://unpkg.com/@custom-element/core/dist/ce-core.min.js"></script> -->
     <script defer src="https://unpkg.com/@custom-element/core/dist/ce-core.js"></script>
-    <style>
-      body {
-        font-family: var(--theme-main-font, 'Roboto');
-        margin: 0;
-        color: var(--theme-text-color-800, #424242);
-      }
-
-      *, *:before, *:after {
-        box-sizing: border-box;
-      }
-
-      pre {
-        max-width: 100%;
-        overflow: auto;
-      }
-      div pre.prettyprint {
-        padding: 12px;
-        border: 1px solid var(--theme-color-300);
-      }
-
-      .float-left { float: left; }
-      .float-right { float: right; }
-      .display-none { display: none; }
-      .display-none:target { display: block; }
-      .clear-both:after {
-        visibility: hidden;
-        display: block;
-        font-size: 0;
-        content: " ";
-        clear: both;
-        height: 0;
-      }
-
-      .container {
-        padding: 12px;
-      }
-
-      .dark-bg {
-        background-color: var(--theme-color-600, #757575);
-        color: var(--theme-text-color-0, #ffffff);
-      }
-
-      main > div {
-        max-width: 1024px;
-        margin: 0 auto;
-      } 
-      a-nav-drawer .filler {
-        margin: 0; 
-        height:56px;
-        line-height: 56px;
-        padding: 0 18px;
-      }
-
-      a-nav-drawer .nav-items {
-        max-height: 0px;
-        overflow: hidden;
-        transition: all 0.5s ease-in-out;
-      }
-      a-nav-drawer .title { cursor: pointer; }
-      a-nav-drawer .title an-icon { display: none; }
-      a-nav-drawer .title:not(.expanded) .folded { display: inline-block; }
-      a-nav-drawer .title.expanded .expanded { display: inline-block; }
-      a-nav-drawer .title.expanded + .nav-items {
-        max-height: 999px;
-      }
-      @media only screen and (min-width : 1024px) {
-        main {
-          margin-left: 320px;
-        }
-      }
-
-      .demo { position: relative; }
-      .view-source ~ label { padding: 12px 0; display: inline-block; }
-      .view-source ~ .code { max-height: 0; overflow: hidden; border: none; margin: 0; padding:0; transition: all .4s ease-out;}
-      .view-source[checked] ~ .code { max-height: 999px;  transition: all 1s ease-out; overflow: auto;}
-      a-card .demo > a-card {max-width: 480px; margin: 0 auto;}
-    </style>
   </head>
   <body>
     <a-nav-drawer id="nav-drawer">
@@ -146,7 +70,7 @@
 
     <an-app-bar app-title="app-bar" class="fixed">
       <div class="nav-icon">
-        <an-icon onclick="showDrawer()">menu</an-icon>
+        <an-icon onmouseup="showDrawer()">menu</an-icon>
       </div>
       <span class="title">Custom Elements With Material Design</span>
       <div class="icons">

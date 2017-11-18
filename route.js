@@ -5,6 +5,7 @@ Array.from(navItems).forEach(function(navItem) {
   });
 });
 var mainEl = document.querySelector('main');
+
 route(window.location.hash || '#usage');
 
 function route(url) {
