@@ -4,7 +4,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="./themes/blue.css"> <!-- theme -->
+    <link rel="stylesheet" id="theme-css" href="./themes/blue.css"> <!-- theme -->
     <link rel="stylesheet" href="style.css"> <!-- theme -->
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
@@ -65,7 +65,25 @@
         <b>Themes</b>
       </div>
       <div id="themes" class="nav-items">
-        <a-nav-item href="javascript:void(0)" icon="palette">Red</a-nav-item>
+        <a-nav-item href="javascript:setTheme('amber')" icon="palette">Amber</a-nav-item>
+	<a-nav-item href="javascript:setTheme('blue-grey')" icon="palette">Blue Grey</a-nav-item>
+	<a-nav-item href="javascript:setTheme('blue')" icon="palette">Blue</a-nav-item>
+	<a-nav-item href="javascript:setTheme('brown')" icon="palette">Brown</a-nav-item>
+	<a-nav-item href="javascript:setTheme('cyan')" icon="palette">Cyan</a-nav-item>
+	<a-nav-item href="javascript:setTheme('deep-orange')" icon="palette">Deep Orange</a-nav-item>
+	<a-nav-item href="javascript:setTheme('deep-purple')" icon="palette">Deep Purble</a-nav-item>
+	<a-nav-item href="javascript:setTheme('green')" icon="palette">Green</a-nav-item>
+	<a-nav-item href="javascript:setTheme('grey')" icon="palette">Grey</a-nav-item>
+	<a-nav-item href="javascript:setTheme('indigo')" icon="palette">Indigo</a-nav-item>
+	<a-nav-item href="javascript:setTheme('light-blue')" icon="palette">Light Blue</a-nav-item>
+	<a-nav-item href="javascript:setTheme('light-green')" icon="palette">Light Green</a-nav-item>
+	<a-nav-item href="javascript:setTheme('lime')" icon="palette">Lime</a-nav-item>
+	<a-nav-item href="javascript:setTheme('orange')" icon="palette">Orange</a-nav-item>
+	<a-nav-item href="javascript:setTheme('pink')" icon="palette">Pink</a-nav-item>
+	<a-nav-item href="javascript:setTheme('purple')" icon="palette">Purple</a-nav-item>
+	<a-nav-item href="javascript:setTheme('red')" icon="palette">Red</a-nav-item>
+	<a-nav-item href="javascript:setTheme('teal')" icon="palette">Teal</a-nav-item>
+	<a-nav-item href="javascript:setTheme('yellow')" icon="palette">Yellow</a-nav-item>
       </div>
       <br/>
       <div style="text-align:center">
@@ -88,7 +106,6 @@
     </main>
 
     <script src="script.js"></script>
-    </script>
     <script src="route.js"></script>
   </body>
 </html>

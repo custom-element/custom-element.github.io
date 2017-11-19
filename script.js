@@ -12,6 +12,11 @@ function setDemo(src, dest) {
   }, 100)
 }
 
+function setTheme(theme) {
+  var themeEl = document.querySelector('#theme-css');
+  themeEl.setAttribute('href', './themes/' + theme + '.css');
+}
+
 function toggle(el) {
   el.classList.toggle('expanded');
 }
