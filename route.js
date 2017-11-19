@@ -1,12 +1,9 @@
-var navItems = document.querySelectorAll('a-nav-item[href]');
-Array.from(navItems).forEach(function(navItem) {
-  navItem.addEventListener('click', function() {
-    return route(navItem.getAttribute('href'));
-  });
-});
 var mainEl = document.querySelector('main');
 
 route(window.location.hash || '#usage');
+window.addEventListener('popstate', function(event) {
+  route(window.location.hash || '#usage');
+});
 
 function route(url) {
   switch(true) {
@@ -17,11 +14,12 @@ function route(url) {
       break;
     case !!url.match(/^javascript:/): // js case
       break;
-    default: // component case
-      let comp = url.replace('#','');
-      updateMain(`https://rawgit.com/allenhwkim/custom-element/master/components/${comp}/index.html`);
+    default: // custom element case
+      let elName = url.replace('#','');
+      updateMain(`https://rawgit.com/allenhwkim/custom-element/master/elements/${elName}/index.html`);
       break;
   }
+  window.scrollTo(0,0);
 }
 
 function updateMain(url) {
