@@ -12,7 +12,7 @@ function route(url) {
   switch(true) {
     case url === '#installation':
     case url === '#usage':
-    case url === '#href':
+    case url === '#faq':
       updateMain('pages/getting-started.html');
       break;
     case !!url.match(/^javascript:/): // js case
@@ -37,7 +37,7 @@ function updateMain(url) {
       setTimeout(function() { // execute script because innerHTML does not run script
         scripts.forEach(function(script) {
           eval(script.match(/<script>([\s\S]*?)<\/script>/)[1]);
-        })
+        });
       });
     } else {
       mainEl.innerHTML = text;
