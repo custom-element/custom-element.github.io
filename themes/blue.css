@@ -7,6 +7,7 @@
   --theme-icon-font: 'Material Icons';
 
   /* colors  https://material.io/guidelines/style/color.html#color-color-palette */
+  --theme-color-50: #E3F2FD;
   --theme-color-100: #BBDEFB;
   --theme-color-200: #90CAF9;
   --theme-color-300: #64B5F6;
@@ -25,6 +26,7 @@
   --theme-color-error:  #ff0000;
 
   --theme-text-color-0: #FFFFFF;
+  --theme-text-color-50: #FAFAFA;
   --theme-text-color-100: #F5F5F5;
   --theme-text-color-200: #EEEEEE;
   --theme-text-color-300: #E0E0E0;
