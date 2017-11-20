@@ -1,5 +1,5 @@
 body {
-  font-family: var(--theme-main-font, 'Roboto');
+  font-family: var(--theme-main-font, 'Helvetica Neue', sans-serif);
   margin: 0;
   color: var(--theme-text-color-800, #424242);
 }

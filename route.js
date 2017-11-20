@@ -12,6 +12,9 @@ function route(url) {
     case url === '#faq':
       updateMain('pages/getting-started.html');
       break;
+    case url === '#theme':
+      updateMain('pages/theme.html');
+      break;
     case !!url.match(/^javascript:/): // js case
       break;
     default: // custom element case
