@@ -40,3 +40,22 @@ function openDialog(id, data) {
 function showDemoMenu() {
   document.querySelector('#demo-menu').classList.add('visible');
 }
+
+function getImportUrl() {
+  let elName = window.location.hash.replace('#','');
+  if (elName.match(/^\//) || elName.match(/(page1|page2|invalid)/)) {
+    return null;
+  }
+  return `https://rawgit.com/allenhwkim/custom-element/master/elements/${elName}/index.html`; 
+}
+
+function onHttpEnd(response) {
+  return response.text()
+    .then(function(text) {
+      let bodyHTML = text;
+      if (text.match(/<html>/)) {
+        bodyHTML = text.match(/<body.*?>([\s\S]*?)<\/body>/)[1];
+      }
+      return bodyHTML;
+    })
+}

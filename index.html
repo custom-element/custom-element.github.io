@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/code-prettify@0.1.0/src/run_prettify.js"></script>
     <!-- <script src="https://unpkg.com/@custom-element/core/dist/ce-core.js"></script> -->
     <script defer src="https://unpkg.com/@custom-element/core/dist/ce-core.min.js"></script>
+    <script defer src="https://unpkg.com/@custom-element/router/dist/main.js"></script> 
   </head>
   <body>
     <a-nav-drawer id="nav-drawer">
@@ -57,6 +58,8 @@
         <a-nav-item href="#tabs" icon="code">Tabs</a-nav-item>
         <a-nav-item href="#text-field" icon="code">Text Field</a-nav-item>
         <a-nav-item href="#tooltip" icon="code">Tooltip</a-nav-item>
+        <hr/>
+        <a-nav-item href="#router" icon="code">Router</a-nav-item>
       </div>
 
       <hr/>
@@ -107,9 +110,17 @@
 
     <main>
       <!-- contents will be updated dynamically by route -->
+      <a-router on-http-end="onHttpEnd">
+        <a-route path="installation" import="pages/getting-started.html"></a-route>
+        <a-route path="usage" import="pages/getting-started.html"></a-route>
+        <a-route path="faq" import="pages/getting-started.html"></a-route>
+        <a-route path="theme" import="pages/theme.html"></a-route>
+        <a-route path="" import="pages/getting-started.html"></a-route>
+        <a-route default no-cache import="getImportUrl()"></a-route>
+      </a-router>
     </main>
 
     <script src="script.js"></script>
-    <script src="route.js"></script>
+    <!-- <script src="route.js"></script> -->
   </body>
 </html>
