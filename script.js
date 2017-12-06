@@ -43,9 +43,6 @@ function showDemoMenu() {
 
 function getImportUrl() {
   let elName = window.location.hash.replace('#','');
-  if (elName.match(/^\//) || elName.match(/(page1|page2|invalid)/)) {
-    return null;
-  }
   return `https://rawgit.com/allenhwkim/custom-element/master/elements/${elName}/index.html`; 
 }
 
