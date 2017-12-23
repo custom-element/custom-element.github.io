@@ -19,7 +19,7 @@ div pre.prettyprint {
   border: 1px solid var(--theme-color-300);
 }
 main {
-  background-color: #fffff !important;
+  background-color: #ffffff !important;
 }
 
 .float-left { float: left; }
