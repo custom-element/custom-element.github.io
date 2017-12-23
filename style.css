@@ -18,6 +18,9 @@ div pre.prettyprint {
   padding: 12px;
   border: 1px solid var(--theme-color-300);
 }
+main {
+  background-color: #fffff !important;
+}
 
 .float-left { float: left; }
 .float-right { float: right; }
